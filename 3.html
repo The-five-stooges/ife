@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body{
+			padding: 20px;
+		}
+		.container, .teamname, .teammember, .maincontent{
+			box-sizing: border-box;
+			border:1px solid #999;
+			padding: 20px;
+			background:white;
+		}
+		.container{
+			overflow: auto;
+			background: #eee;
+			display: block;
+			min-width: 640px;
+			zoom:1;/*ie触发haslayout*/
+		}
+		.teamname{
+			width: 200px;
+			float: left;
+		}
+		.logo{
+			height: 80px;
+			width: 80px;
+			float: left;
+		}
+		.logo img{
+			float: left;
+		}
+		.name{
+			float: right;
+			width: 78px;
+			text-align: center;
+		}
+		.clearfix{
+			overflow: auto;
+			zoom:1;
+		}
+		.teammember{
+			width: 120px;
+			float: right;
+		}
+		.maincontent{
+			width:auto;
+			margin-left: 220px;
+			margin-right: 140px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="teamname clearfix">
+			<div class="logo"><img src="1.jpg" alt=""></div>
+			<div class="name">五个臭皮匠</div>
+		</div>
+		<div class="teammember">
+			<img src="1.jpg" alt="" class="personalimg">
+			<img src="1.jpg" alt="" class="personalimg">
+			<img src="1.jpg" alt="" class="personalimg">
+			<img src="1.jpg" alt="" class="personalimg">
+		</div>
+		<div class="maincontent">
+			<p>团队介绍：</p>
+			<p>这是一个团队</p>
+			<p>我们是一个团队</p>
+			<p>春季班</p>
+			<p>正文</p>
+		</div>
+	</div>
+	<script>
+	　　function resizeImage(obj){
+		　　obj.width=obj.width>80&&obj.width>obj.height?80:auto;
+		　　obj.height=obj.height>80?80:80;
+	　　}
+		window.onload=function(){
+			var Img=document.getElementsByTagName("img");
+			for(i=0;i<Img.length;i++){
+				resizeImage(Img[i]);
+			}
+		}
+	</script>
+</body>
+</html>
