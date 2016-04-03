@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{margin:0;padding:0;}
+		.container{
+			width: 300px;
+			height: 150px;
+			position: relative;
+			overflow: hidden;
+		}
+		.main{
+			width: 300%;
+			height: 100%;
+			position: relative;
+			left: 0;
+			list-style-type: none;
+			transition: 0.5s left;
+			font-size: 0;
+			word-spacing: 0;
+			letter-spacing: 0;/*去除inline-block元素间隙*/
+		}
+		.main li{
+			width: 300px;
+			height: 150px;
+			display: inline-block;
+		}
+		.main li:first-child{
+			background: orange;
+		}
+		.main li:nth-child(2){
+			background: lightgreen;
+		}
+		.main li:last-child{
+			background: darkblue;
+		}
+		.control{
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			z-index: 1;
+		}
+		.control a{
+			display: inline-block;
+			width: 25px;
+			height: 25px;
+			background: gray;
+			opacity: 0.5;
+			color:white;
+			text-align: center;
+			line-height: 25px;
+			text-decoration: none;
+		}
+		.control a:active{
+			color:black;
+		}
+		#img1:target~.main{
+			left:0;
+		}
+		#img2:target~.main{
+			left:-100%;
+		}
+		#img3:target~.main{
+			left: -200%;
+		}
+
+		form input{
+			margin: 100px 100px;
+			width:100px;
+			height:25px;
+			position: relative;
+			left: 0;
+			transition:all 0.5s;
+			outline: none;
+		}
+		form input:focus{
+			box-shadow: 0 0 3px blue;
+			left: -50px;
+			width: 200px;
+		}
+		table{
+			text-align: left;
+			margin-left: 50px;
+		}
+		table th{
+			background: black;
+			color: white;
+		}
+		.top{
+			color:red;
+		}
+		table tr:nth-child(2n+1){
+			background: #ccc;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div id="img1"></div>
+		<div id="img2"></div>
+		<div id="img3"></div>
+		<ul class="main">
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+		<div class="control">
+			<a href="#img1">1</a>
+			<a href="#img2">2</a>
+			<a href="#img3">3</a>
+		</div>
+	</div>
+
+	<form action="#">
+		<input type="text">
+	</form>
+
+	<table>
+		<tr>
+			<th>排名</th>
+			<th>网站</th>
+			<th>热度</th>
+		</tr>
+		<tr class="top">
+			<td>1.</td>
+			<td>百度前端技术学院</td>
+			<td>13000</td>
+		</tr>
+		<tr class="top">
+			<td>2.</td>
+			<td>百度前端技术学院</td>
+			<td>12000</td>
+		</tr>
+		<tr class="top">
+			<td>3.</td>
+			<td>百度前端技术学院</td>
+			<td>11000</td>
+		</tr>
+		<tr>
+			<td>4.</td>
+			<td>百度前端技术学院</td>
+			<td>10000</td>
+		</tr>
+		<tr>
+			<td>5.</td>
+			<td>百度前端技术学院</td>
+			<td>9000</td>
+		</tr>
+		<tr>
+			<td>6.</td>
+			<td>百度前端技术学院</td>
+			<td>8000</td>
+		</tr>
+		<tr>
+			<td>7.</td>
+			<td>百度前端技术学院</td>
+			<td>7000</td>
+		</tr>
+		<tr>
+			<td>8.</td>
+			<td>百度前端技术学院</td>
+			<td>6000</td>
+		</tr>
+		<tr>
+			<td>9.</td>
+			<td>百度前端技术学院</td>
+			<td>5000</td>
+		</tr>
+		<tr>
+			<td>10.</td>
+			<td>百度前端技术学院</td>
+			<td>4000</td>
+		</tr>
+	</table>
+</body>
+</html>
